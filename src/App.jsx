@@ -5,7 +5,12 @@ const App = () => {
   const handleScan = (codes) => {
     if (codes.length > 0) {
       codes.forEach((code) => {
-        alert(`Detected: ${code.rawValue} (Format: ${code.format})`);
+        const text = code.rawValue.toLowerCase(); // Convert to lowercase for case-insensitivity
+        if (text === 'feedback') {
+          window.location.href = 'https://www.scales.uxlivinglab.online/voc/scale/?workspace_id=66c3a354c0c8c6fbadd5fed4&username=VOCABC&scale_id=66c9d21e9090b1529d108a63&scale_type=likert&channel=channel_1&instance_name=instance_5&channel_display_name=VOCABC_CHANNEL_1&instance_display_name=Stand'; // Redirect to Google
+        } else {
+          window.location.href = 'https://dowellresearch.sg/'
+        }
       });
     }
   };
